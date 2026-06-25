@@ -4,9 +4,8 @@ from datetime import datetime
 # Импортируем DAG
 from airflow import DAG
 
-# Импортируем декоратор task и функцию для получения контекста
-from airflow.decorators import task, get_current_context
-
+from airflow.decorators import task
+from airflow.operators.python import get_current_context
 
 with DAG(
     dag_id="lesson_07",
