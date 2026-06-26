@@ -12,6 +12,21 @@ with DAG(
     @task
     def show_context():
         context = get_current_context()
-        print(context.keys())
+        
+        # Достаём основные поля
+        logical_date = context["logical_date"]
+        ds = context["ds"]
+        ts = context["ts"]
+        run_id = context["run_id"]
+        data_interval_start = context["data_interval_start"]
+        data_interval_end = context["data_interval_end"]
 
+        # Печатаем значения в лог
+        print("logical_date:", logical_date)
+        print("ds:", ds)
+        print("ts:", ts)
+        print("run_id:", run_id)
+        print("data_interval_start:", data_interval_start)
+        print("data_interval_end:", data_interval_end)
+        
     show_context()
