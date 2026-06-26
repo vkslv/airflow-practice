@@ -18,7 +18,7 @@ from airflow.operators.python import get_current_context
 
 with DAG(
     dag_id='lesson_08',
-    start_date=datetime(2026, 06, 21),
+    start_date=datetime(2026, 6, 21),
     schedule="@daily",
     catchup=True
 ):
