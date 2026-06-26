@@ -6,7 +6,7 @@ from airflow.operators.python import get_current_context
 with DAG(
     dag_id='lesson_07_01',
     start_date=datetime(2026, 1, 1),
-    schedule=None,
+    schedule="@daily",
     catchup=False,
 ):
     @task
@@ -28,5 +28,5 @@ with DAG(
         print("run_id:", run_id)
         print("data_interval_start:", data_interval_start)
         print("data_interval_end:", data_interval_end)
-        
+
     show_context()
